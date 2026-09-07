@@ -1,0 +1,10 @@
+{
+  "name": "MuxCore DLNA",
+  "description": "DLNA/UPnP media server for household library paths.",
+  "version": "0.1.0",
+  "author": "MuxCore",
+  "roles": ["media"],
+  "capabilities": ["media.dlna", "settings"],
+  "contracts": [],
+  "minCoreVersion": "0.5.8"
+}
