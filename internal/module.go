@@ -16,6 +16,8 @@ import (
 
 	"github.com/Muxcore-Media/core/pkg/contracts"
 	"github.com/Muxcore-Media/core/sdk/go/client"
+	modulesdk "github.com/Muxcore-Media/core/sdk/go/module"
+	manifest "github.com/Muxcore-Media/media-dlna"
 	"github.com/Muxcore-Media/media-dlna/internal/dlna"
 	dlnahealth "github.com/Muxcore-Media/media-dlna/internal/health"
 	"github.com/Muxcore-Media/media-dlna/internal/probe"
@@ -71,7 +73,7 @@ func (m *Module) Info() contracts.ModuleInfo {
 	return contracts.ModuleInfo{
 		ID:             m.cfg.ID,
 		Name:           "MuxCore DLNA",
-		Version:        moduleVersion,
+		Version:        modulesdk.ManifestVersion(manifest.ManifestJSON),
 		Roles:          []string{"media"},
 		Description:    "DLNA/UPnP media server for household library paths",
 		Author:         "MuxCore",

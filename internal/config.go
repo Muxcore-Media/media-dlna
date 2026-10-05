@@ -10,7 +10,6 @@ const (
 	defaultGRPCAddr       = ":9751"
 	defaultHealthHTTPAddr = ":8751"
 	defaultFriendlyName   = "MuxCore DLNA"
-	moduleVersion         = "0.1.0"
 )
 
 // Config holds runtime settings for the media-dlna module.
