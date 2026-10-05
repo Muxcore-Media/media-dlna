@@ -13,10 +13,10 @@ import (
 
 // Status describes module readiness for the dedicated health listener.
 type Status struct {
-	OK       bool   `json:"ok"`
-	Status   string `json:"status"`
-	DLNA     string `json:"dlna"`
-	Reason   string `json:"reason,omitempty"`
+	OK        bool   `json:"ok"`
+	Status    string `json:"status"`
+	DLNA      string `json:"dlna"`
+	Reason    string `json:"reason,omitempty"`
 	MediaPath string `json:"media_path,omitempty"`
 }
 

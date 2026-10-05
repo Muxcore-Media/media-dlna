@@ -69,15 +69,15 @@ func NewModule(cfg Config) *Module {
 
 func (m *Module) Info() contracts.ModuleInfo {
 	return contracts.ModuleInfo{
-		ID:           m.cfg.ID,
-		Name:         "MuxCore DLNA",
-		Version:      moduleVersion,
-		Roles:        []string{"media"},
-		Description:  "DLNA/UPnP media server for household library paths",
-		Author:       "MuxCore",
-		Capabilities: []string{"media.dlna", "settings"},
+		ID:             m.cfg.ID,
+		Name:           "MuxCore DLNA",
+		Version:        moduleVersion,
+		Roles:          []string{"media"},
+		Description:    "DLNA/UPnP media server for household library paths",
+		Author:         "MuxCore",
+		Capabilities:   []string{"media.dlna", "settings"},
 		MinCoreVersion: "0.5.8",
-		HTTPAddr:     m.cfg.HTTPAddr,
+		HTTPAddr:       m.cfg.HTTPAddr,
 	}
 }
 

@@ -11,8 +11,8 @@ import (
 )
 
 type persistedItem struct {
-	Path string          `json:"path"`
-	Info *ffprobe.Info   `json:"info"`
+	Path string        `json:"path"`
+	Info *ffprobe.Info `json:"info"`
 }
 
 // Cache persists ffprobe metadata for DLNA browsing.
@@ -96,7 +96,7 @@ func (c *Cache) load() error {
 	if err != nil {
 		return err
 	}
-	defer f.Close()
+	defer func() { _ = f.Close() }()
 	var items []persistedItem
 	if err := json.NewDecoder(f).Decode(&items); err != nil {
 		return err
