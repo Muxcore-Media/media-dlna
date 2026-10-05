@@ -5,14 +5,14 @@ go 1.26.6
 require (
 	github.com/Muxcore-Media/core/pkg/contracts v0.6.0
 	github.com/Muxcore-Media/core/sdk/go/client v0.6.1
-	github.com/Muxcore-Media/core/sdk/go/module v0.6.3
+	github.com/Muxcore-Media/core/sdk/go/module v0.6.4
 	github.com/anacrolix/dms v1.8.0
 	github.com/anacrolix/ffprobe v1.1.0
 	google.golang.org/grpc v1.83.2
 )
 
 require (
-	github.com/Muxcore-Media/core v0.6.12 // indirect
+	github.com/Muxcore-Media/core v0.6.14 // indirect
 	golang.org/x/net v0.58.0 // indirect
 	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/text v0.41.0 // indirect
