@@ -17,6 +17,7 @@ import (
 	"github.com/Muxcore-Media/core/pkg/contracts"
 	"github.com/Muxcore-Media/core/sdk/go/client"
 	modulesdk "github.com/Muxcore-Media/core/sdk/go/module"
+	"github.com/Muxcore-Media/core/sdk/go/module/meshtls"
 	manifest "github.com/Muxcore-Media/media-dlna"
 	"github.com/Muxcore-Media/media-dlna/internal/dlna"
 	dlnahealth "github.com/Muxcore-Media/media-dlna/internal/health"
@@ -114,7 +115,11 @@ func (m *Module) Init(ctx context.Context) error {
 }
 
 func (m *Module) Start(ctx context.Context) error {
-	m.grpcSrv = grpc.NewServer()
+	srvOpt, err := meshtls.ServerOption()
+	if err != nil {
+		return fmt.Errorf("grpc mesh TLS: %w", err)
+	}
+	m.grpcSrv = grpc.NewServer(srvOpt)
 	healthpb.RegisterHealthServer(m.grpcSrv, health.NewServer())
 	reflection.Register(m.grpcSrv)
 	go func() {
